@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedro Teles | Software Developer</title>
     <link rel="stylesheet" href="css/style.min.css">
+    <style>
+        :root{--year-label:"Year:"}
+        @media (max-width:768px){
+            .empresa-impar-ano::before, .empresa-par-ano::before{content:var(--year-label) !important}
+        }
+    </style>
 
     <meta name="description" content="Software Developer. Awarded in math olympiads, with strong logical reasoning.">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">

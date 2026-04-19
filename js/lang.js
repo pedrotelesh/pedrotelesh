@@ -75,6 +75,8 @@
   function applyLanguage(lang){
     if(!translations[lang]) lang='en';
     document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
+    const yearLabel = (lang === 'pt') ? '"Ano:"' : '"Year:"';
+    document.documentElement.style.setProperty('--year-label', yearLabel);
     if(translations[lang]['title']) document.title = translations[lang]['title'];
     const metaDesc = document.querySelector('meta[name="description"]');
     if(metaDesc && translations[lang]['meta.description']) metaDesc.setAttribute('content', translations[lang]['meta.description']);
