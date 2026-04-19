@@ -4,16 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Teles | Desenvolvedor</title>
+    <title>Pedro Teles | Software Developer</title>
     <link rel="stylesheet" href="css/style.min.css">
 
-    <meta name="description"
-        content="Desenvolvedor de Software. Premiado em olimpíadas de matemática, com sólido raciocínio lógico.">
+    <meta name="description" content="Software Developer. Awarded in math olympiads, with strong logical reasoning.">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-    <meta property="og:title" content="Pedro Teles | Desenvolvedor">
-    <meta property="og:description"
-        content="Desenvolvedor de Software. Premiado em olimpíadas de matemática, com sólido raciocínio lógico.">
+    <meta property="og:title" content="Pedro Teles | Software Developer">
+    <meta property="og:description" content="Software Developer. Awarded in math olympiads, with strong logical reasoning.">
     <meta property="og:image" content="https://pedroteles.is-a.dev/img/perfil.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pedroteles.is-a.dev/">
@@ -22,53 +20,55 @@
 <body>
     <header class="header">
         <h1>Pedro Teles</h1>
-        <nav>
-            <ul class="nav-list">
-                <li>
-                    <a href="#experiencia"><strong>Experiência</strong></a>
-                </li>
-                <li>
-                    <a href="#marcas"><strong>Marcas</strong></a>
-                </li>
-                <li>
-                    <a href="#projetos"><strong>Projetos</strong></a>
-                </li>
-                <li>
-                    <a href="#formacao"><strong>Formação</strong></a>
-                </li>
-                <li>
-                    <a href="#contato"><strong>Contato</strong></a>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-list">
+                    <li>
+                        <a href="#experiencia" data-i18n="nav.experience"><strong>Experience</strong></a>
+                    </li>
+                    <li>
+                        <a href="#marcas" data-i18n="nav.brands"><strong>Brands</strong></a>
+                    </li>
+                    <li>
+                        <a href="#projetos" data-i18n="nav.projects"><strong>Projects</strong></a>
+                    </li>
+                    <li>
+                        <a href="#formacao" data-i18n="nav.education"><strong>Education</strong></a>
+                    </li>
+                    <li>
+                        <a href="#contato" data-i18n="nav.contact"><strong>Contact</strong></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="lang-toggle" id="lang-toggle" role="group" aria-label="Language switch">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="pt">PT</button>
+            </div>
+        </div>
     </header>
     <main class="introducao container">
-        <img src="img/perfil.png" alt="Imagem de Perfil" loading="lazy">
+        <img src="img/perfil.png" alt="Profile image" loading="lazy">
         <div>
-            <h1>Desenvolvedor<br>de Software</h1>
-            <a href="https://drive.google.com/file/d/1AJS_WCPzaQ4J-WjJUVC1leOzjtqF3t0D/view" class="botao-principal"
-                target="_blank" rel="noopener noreferrer">Currículo Virtual</a>
+            <h1 data-i18n="main.title">Software<br>Developer</h1>
+            <a href="https://drive.google.com/file/d/1AJS_WCPzaQ4J-WjJUVC1leOzjtqF3t0D/view" class="botao-principal" target="_blank" rel="noopener noreferrer" data-i18n="resume.button">Resume</a>
         </div>
     </main>
-    <section class="experiencia container" id="experiencia" aria-label="Experiência">
-        <h2 class="subtitulo">Experiência</h2>
+    <section class="experiencia container" id="experiencia" aria-label="Experience">
+        <h2 class="subtitulo" data-i18n="experience.subtitle">Experience</h2>
         <div>
-            <p class="experiencia-texto">Profissional em início de carreira, com interesse em desenvolvimento e sólido
-                <strong>raciocínio lógico</strong>. Premiado em <strong>olimpíadas de matemática</strong>, com destaque
-                para o desempenho analítico e a dedicação.
-            </p>
+            <p class="experiencia-texto" data-i18n="experience.p1">Early-career professional interested in development with strong <strong>logical reasoning</strong>. Awarded in <strong>mathematics olympiads</strong>, with analytical performance and dedication.</p>
             <div class="empresa-par">
                 <span class="empresa-par-ano">2025/8<span class="ano-separator"></span>Atual</span>
                 <h3 class="empresa-par-titulo">Skeps</h3>
                 <div class="cargos-lista">
                     <div class="cargo-item">
-                        <span class="cargo-titulo">Desenvolvedor de Software Junior</span>
+                        <span class="cargo-titulo" data-i18n="skeps.role1">Junior Software Developer</span>
                     </div>
                     <div class="cargo-item anterior">
-                        <span class="cargo-titulo">Estagiário</span>
+                        <span class="cargo-titulo" data-i18n="skeps.role2">Developer</span>
                     </div>
                 </div>
-                <p class="empresa-par-texto">Na Skeps, trabalho com desenvolvimento de Lambdas em Node.js, frontends com React e desenvolvimento de ChatBots na plataforma Blip.</p>
+                <p class="empresa-par-texto" data-i18n="skeps.p">At Skeps I work on ChatBots on the Blip platform and create scripts in JavaScript and TypeScript.</p>
                 <ul class="empresa-par-habilidades">
                     <li>Node.js</li>
                     <li>AWS Lambda</li>
@@ -78,9 +78,8 @@
             <div class="empresa-impar">
                 <span class="empresa-impar-ano">2024/12<span class="ano-separator"></span>2025/5</span>
                 <h3 class="empresa-impar-titulo">Plus Promotora</h3>
-                <span class="empresa-impar-titulo">Estagiário Back Office</span>
-                <p class="empresa-impar-texto">Na Plus Promotora, trabalhei com auditoria de vendas utilizando o Google
-                    Sheets e edição de áudio com o Audacity.</p>
+                <span class="empresa-impar-titulo" data-i18n="plus.role">Estagiário Back Office</span>
+                <p class="empresa-impar-texto" data-i18n="plus.p">At Plus Promotora I worked on sales auditing using Google Sheets and audio editing with Audacity.</p>
                 <ul class="empresa-impar-habilidades">
                     <li>Google Sheets</li>
                     <li>Audacity</li>
@@ -90,49 +89,49 @@
         </div>
     </section>
     <section class="marcas container" id="marcas" aria-label="Marcas">
-        <h2 class="subtitulo">Marcas</h2>
+        <h2 class="subtitulo" data-i18n="brands.subtitle">Brands</h2>
         <div class="marcas-container">
-            <p class="marcas-texto">Empresas de <strong>diversos segmentos</strong> confiam no meu trabalho, onde busco sempre entregar soluções de <strong>alta qualidade e impacto</strong>.</p>
+            <p class="marcas-texto" data-i18n="brands.p">Companies from <strong>various industries</strong> trust my work; I always aim to deliver solutions of <strong>high quality and impact</strong>.</p>
             <ul class="marcas-lista">
                 <li>
-                    <img src="img/brands/record.png" alt="Sem Parar">
+                    <img src="img/brands/record.png" alt="Record">
                     <p>Record</p>
-                </li>
-                <li>
-                    <img src="img/brands/semparar.png" alt="Sem Parar">
-                    <p>Sem Parar</p>
                 </li>
                 <li>
                     <img src="img/brands/blip.png" alt="Blip">
                     <p>Blip</p>
                 </li>
                 <li>
-                    <img src="img/brands/origoenergia.png" alt="Órigo Energia">
-                    <p>Órigo Energia</p>
-                </li>
-                <li>
-                    <img src="img/brands/childfund.png" alt="ChildFund">
-                    <p>ChildFund</p>
+                    <img src="img/brands/semparar.png" alt="Sem Parar">
+                    <p>Sem Parar</p>
                 </li>
                 <li>
                     <img src="img/brands/trato.png" alt="Trato">
                     <p>Trato</p>
                 </li>
                 <li>
+                    <img src="img/brands/origoenergia.png" alt="Órigo Energia">
+                    <p>Órigo Energia</p>
+                </li>
+                <li>
                     <img src="img/brands/golplus.png" alt="Gol Plus">
                     <p>Gol Plus</p>
+                </li>
+                <li>
+                    <img src="img/brands/childfund.png" alt="ChildFund">
+                    <p>ChildFund</p>
                 </li>
             </ul>
         </div>
     </section>
     <section class="projetos" id="projetos" aria-label="Formação">
         <div class="projetos-container container">
-            <h2 class="subtitulo">Projetos</h2>
+            <h2 class="subtitulo" data-i18n="projects.subtitle">Projects</h2>
             <div>
                 <ul class="projetos-lista">
                     <li class="projetos-item">
                         <span class="projetos-nome">Peter IA</span>
-                        <h3 class="projetos-curso">ChatBot para Discord, trazendo comandos de IA e já utilizado por mais de 80 mil usuários!</h3>
+                        <h3 class="projetos-curso" data-i18n="project.peter.desc">Discord ChatBot providing AI commands and used by over 80,000 users!</h3>
                         <div class="projetos-linguagens">
                             <span class="projetos-linguagem">Python</span>
                             <span class="projetos-linguagem">MySQL</span>
@@ -149,46 +148,43 @@
     </section>
     <section class="formacao" id="formacao" aria-label="Formação">
         <div class="formacao-container container">
-            <h2 class="subtitulo">Formação</h2>
+            <h2 class="subtitulo" data-i18n="education.subtitle">Education</h2>
             <div>
-                <p class="formacao-texto">Minha mais recente formação foi o curso de <b>Front End</b> e <b>UX/UI
-                        Design</b> que fiz na Origamid. Além disso, sou <b>bi-medalhista</b> da <b>Olimpíada Canguru de
-                        Matemática</b> e pretendo cursar Engenharia de Software no próximo ano.
-                </p>
+                <p class="formacao-texto" data-i18n="formation.p">My most recent training was the Front End and UX/UI Design course I took at Origamid. I am also a two-time medalist of the Kangaroo Math Olympiad and plan to study Software Engineering next year.</p>
                 <ul class="formacao-lista">
                     <li class="formacao-item anhanguera">
                         <span class="formacao-nome">Anhanguera</span>
-                        <h3 class="formacao-curso">Engenharia de Software (Bacharelado)</h3>
-                        <span class="formacao-ano">2025 - 2029</span>
+                        <h3 class="formacao-curso">Software Engineering (BSc)</h3>
+                        <span class="formacao-ano">2026 - 2029</span>
                     </li>
                     <li class="formacao-item">
                         <span class="formacao-nome">Origamid</span>
-                        <h3 class="formacao-curso">Front End e UX/UI Design</h3>
+                        <h3 class="formacao-curso">Front End and UX/UI Design</h3>
                         <span class="formacao-ano">2024 - 2025</span>
                     </li>
                     <li class="formacao-item">
                         <span class="formacao-nome">Colégio Franciscano Sagrada Família</span>
-                        <h3 class="formacao-curso">Ensino Médio</h3>
+                        <h3 class="formacao-curso" data-i18n="education.highschool">Ensino Médio</h3>
                         <span class="formacao-ano">2021 - 2025</span>
                     </li>
                     <li class="formacao-item">
                         <span class="formacao-nome">Colégio Santo Antônio</span>
-                        <h3 class="formacao-curso">Ensino Fundamental</h3>
+                        <h3 class="formacao-curso" data-i18n="education.elementary">Ensino Fundamental</h3>
                         <span class="formacao-ano">2015 - 2020</span>
                     </li>
                 </ul>
 
                 <div class="formacao-extra">
                     <div class="cursos">
-                        <h3>Cursos Intensivos</h3>
+                        <h3 data-i18n="courses.title">Intensive Courses</h3>
                         <ul>
-                            <li>HTML e CSS (Origamid) <span>23 horas</span></li>
+                            <li>HTML e CSS (Origamid) <span data-i18n="course.hours">23 horas</span></li>
                         </ul>
                     </div>
                     <div class="idiomas">
-                        <h3>Idiomas</h3>
+                        <h3 data-i18n="languages.title">Languages</h3>
                         <ul>
-                            <li>Inglês <span>/ Intermediário</span></li>
+                            <li data-i18n="language.english">English <span>/ Intermediate</span></li>
                         </ul>
                     </div>
                 </div>
@@ -197,15 +193,15 @@
     </section>
     <footer class="footer" id="contato">
         <div class="footer-container">
-            <p class="footer-texto">Feito com ❤️ em Belo Horizonte!
-            </p>
+            <p class="footer-texto" data-i18n="footer.made">Made with ❤️ in Belo Horizonte!</p>
             <ul class="footer-contato">
-                <li><a href="mailto:contato@pedroteles.com.br">contato@pedroteles.com.br</a></li>
+                <li><a href="mailto:contato@pedroteles.com.br" data-i18n="contact.email">contato@pedroteles.com.br</a></li>
                 <li><a href="https://www.linkedin.com/in/pedrotelesh" target="_blank"><img src="img/linkedin.svg" alt="LinkedIn"></a></li>
             </ul>
-            <p class="footer-copy">© Copyright <span id="ano-atual"></span> Pedro Teles. Todos os direitos reservados.</p>
+            <p class="footer-copy" data-i18n="footer.copy">© <span id="ano-atual"></span> Pedro Teles. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/lang.js"></script>
     <script>
         document.getElementById('ano-atual').innerText = new Date().getFullYear();
     </script>
