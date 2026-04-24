@@ -74,11 +74,21 @@
     }
   };
 
+  const resumeLinks = {
+    en: 'https://drive.google.com/file/d/1xl0QKpaMBxpc8PShQDLX5xU2AlskHTLA/view',
+    pt: 'https://drive.google.com/file/d/1mMBhQNV6upbxcRPiGGeYOP3AC3CQ9uFE/view'
+  };
+
   function applyLanguage(lang){
     if(!translations[lang]) lang='en';
     document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
     const yearLabel = (lang === 'pt') ? '"Ano:"' : '"Year:"';
     document.documentElement.style.setProperty('--year-label', yearLabel);
+    const resume = document.querySelector('.botao-principal');
+    if(resume){
+      const link = resumeLinks[lang] || resumeLinks['en'];
+      resume.setAttribute('href', link);
+    }
     if(translations[lang]['title']) document.title = translations[lang]['title'];
     const metaDesc = document.querySelector('meta[name="description"]');
     if(metaDesc && translations[lang]['meta.description']) metaDesc.setAttribute('content', translations[lang]['meta.description']);
