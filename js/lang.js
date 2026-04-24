@@ -62,7 +62,7 @@
       "projects.subtitle":"Projetos",
       "project.peter.desc":"ChatBot para Discord, trazendo comandos de IA e já utilizado por mais de 80 mil usuários!",
       "projects.lang.ai":"IA",
-      "education.course.anhanguera":"Engenharia de Software (Bach.)",
+      "education.course.anhanguera":"Engenharia de Software (Bacharelado)",
       "education.course.origamid":"Front End e UX/UI Design",
       "education.subtitle":"Formação",
       "formation.p":"Minha mais recente formação foi o curso de <b>Front End</b> e <b>UX/UI Design</b> que fiz na Origamid. Além disso, sou <b>bi-medalhista</b> da <b>Olimpíada Canguru de Matemática</b> e pretendo cursar Engenharia de Software no próximo ano.",
