@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://negocios.pedroteles.com.br/sitemap.xml
