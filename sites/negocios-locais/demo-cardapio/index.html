@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cardápio de exemplo | Açaí & Lanches da Praça (fictício)</title>
+<meta name="description" content="Exemplo de cardápio digital com pedido pelo WhatsApp, criado por Pedro Teles. Estabelecimento fictício." />
+<link rel="canonical" href="https://negocios.pedroteles.com.br/demo-cardapio/" />
+<link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+<style>
+:root{--ink:#1b1022;--acai:#5b1f6b;--acai2:#7d2f91;--lime:#b6f829;--soft:#f7f3f8;--body:#5a5060;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--soft);padding-bottom:6rem}
+.demo-bar{display:flex;gap:.5rem;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:var(--ink);color:#fff;font-size:.85rem}
+.demo-bar a{color:var(--ink);background:var(--lime);padding:.4rem .8rem;border-radius:2rem;font-weight:700;text-decoration:none;white-space:nowrap}
+.hero{background:linear-gradient(135deg,var(--acai),var(--acai2));color:#fff;padding:1.6rem 1rem 2.2rem;text-align:center}
+.logo{width:72px;height:72px;margin:0 auto .6rem;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:2.2rem}
+.hero h1{margin:.2rem 0;font-size:1.5rem}.hero p{margin:.2rem 0;opacity:.9;font-size:.9rem}
+.tag{display:inline-block;margin-top:.6rem;padding:.25rem .7rem;border-radius:2rem;background:rgba(255,255,255,.18);font-size:.78rem}
+.cats{position:sticky;top:0;z-index:5;display:flex;gap:.5rem;overflow-x:auto;padding:.7rem 1rem;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.cats a{flex:none;padding:.45rem .9rem;border-radius:2rem;background:var(--soft);color:var(--acai);font-weight:600;font-size:.88rem;text-decoration:none}
+main{max-width:640px;margin:0 auto;padding:0 1rem}
+h2{margin:1.6rem 0 .7rem;font-size:1.15rem;scroll-margin-top:4rem}
+.item{display:flex;gap:.8rem;align-items:center;background:#fff;border-radius:14px;padding:.7rem;margin-bottom:.6rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.photo{flex:none;width:72px;height:72px;border-radius:12px;display:grid;place-items:center;font-size:2.1rem;background:linear-gradient(135deg,#efe3f3,#e6f9c4)}
+.info{flex:1;min-width:0}.info h3{margin:0;font-size:.98rem}.info p{margin:.2rem 0 .35rem;color:var(--body);font-size:.8rem;line-height:1.3}
+.price{font-weight:700;color:var(--acai)}
+.add{flex:none;width:38px;height:38px;border-radius:50%;border:0;background:var(--acai);color:#fff;font-size:1.4rem;cursor:pointer}
+.qty{display:none;align-items:center;gap:.4rem}.qty.on{display:flex}.qty button{width:30px;height:30px;border-radius:50%;border:0;background:var(--soft);font-size:1.1rem;cursor:pointer}
+.qty span{min-width:1.2rem;text-align:center;font-weight:700}
+.cta-pedro{margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;background:var(--ink);color:#fff;text-align:center}
+.cta-pedro h2{margin:0 0 .4rem;color:var(--lime)}.cta-pedro p{margin:0 0 1rem;font-size:.9rem;opacity:.9}
+.cta-pedro a{display:inline-block;padding:.75rem 1.2rem;border-radius:2rem;background:var(--lime);color:var(--ink);font-weight:700;text-decoration:none}
+.note{text-align:center;color:var(--body);font-size:.75rem}
+.cart{position:fixed;left:0;right:0;bottom:0;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));background:#fff;box-shadow:0 -4px 16px rgba(0,0,0,.1);transform:translateY(110%);transition:transform .25s}
+.cart.on{transform:none}
+.cart button{width:100%;max-width:640px;display:flex;justify-content:space-between;margin:0 auto;padding:.9rem 1.1rem;border:0;border-radius:14px;background:#25d366;color:#fff;font-size:1rem;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="demo-bar"><span>⚠️ Exemplo fictício</span><a href="https://wa.me/5531986628694?text=Olá%2C%20Pedro.%20Vi%20o%20cardápio%20de%20exemplo%20e%20quero%20um%20assim." target="_blank" rel="noreferrer">Quer um assim? Fale com o Pedro</a></div>
+<header class="hero">
+<div class="logo">🍇</div>
+<h1>Açaí &amp; Lanches da Praça</h1>
+<p>Açaí, lanches e bebidas • Belo Horizonte</p>
+<p>Aberto todos os dias, 14h às 23h</p>
+<span class="tag">Estabelecimento fictício, só para demonstração</span>
+</header>
+<nav class="cats" aria-label="Categorias">
+<a href="#acai">Açaí</a><a href="#lanches">Lanches</a><a href="#porcoes">Porções</a><a href="#bebidas">Bebidas</a>
+</nav>
+<main id="menu"></main>
+<div class="cart" id="cart"><button id="send"><span id="cartCount">Enviar pedido</span><span id="cartTotal"></span></button></div>
+<script>
+const WA="5531986628694";
+const menu=[
+{id:"acai",name:"Açaí",items:[["Açaí 300ml","Com granola, banana e leite condensado",14.9,"🍇"],["Açaí 500ml","Até 4 acompanhamentos à escolha",19.9,"🍧"],["Açaí 700ml","Até 5 acompanhamentos + 1 cobertura",26.9,"🥣"],["Barca de açaí (2 pessoas)","1 litro com frutas, Nutella e paçoca",44.9,"⛵"]]},
+{id:"lanches",name:"Lanches",items:[["X-Burguer","Pão, hambúrguer 120g, queijo e molho da casa",18.9,"🍔"],["X-Tudo","Hambúrguer, ovo, bacon, presunto, queijo e salada",27.9,"🍔"],["Misto quente","Pão de forma, presunto e queijo na chapa",9.9,"🥪"],["Hot dog mineiro","Salsicha, molho, batata palha e queijo ralado",14.9,"🌭"]]},
+{id:"porcoes",name:"Porções",items:[["Batata frita","Porção 400g com cheddar e bacon",24.9,"🍟"],["Pão de queijo (10 un.)","Quentinho, direto do forno",12.9,"🧀"]]},
+{id:"bebidas",name:"Bebidas",items:[["Refrigerante lata","Coca, Guaraná ou Fanta",6,"🥤"],["Suco natural 500ml","Laranja, abacaxi com hortelã ou maracujá",9.9,"🧃"],["Água mineral","500ml, com ou sem gás",4,"💧"]]}];
+const brl=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const cart={};const el=document.getElementById("menu");let html="";
+menu.forEach(c=>{html+=`<h2 id="${c.id}">${c.name}</h2>`;c.items.forEach((it,i)=>{const k=c.id+i;html+=`<div class="item"><div class="photo" aria-hidden="true">${it[3]}</div><div class="info"><h3>${it[0]}</h3><p>${it[1]}</p><span class="price">${brl(it[2])}</span></div><button class="add" data-k="${k}" aria-label="Adicionar ${it[0]}">+</button><div class="qty" id="q-${k}"><button data-m="${k}" aria-label="Remover">−</button><span id="n-${k}">0</span><button data-k="${k}" aria-label="Adicionar">+</button></div></div>`;cart[k]={name:it[0],price:it[2],n:0}})});
+html+=`<section class="cta-pedro"><h2>Quer um assim?</h2><p>Cardápio digital com fotos, pedido no WhatsApp e QR code para mesa. R$ 400, pronto em até 72h.</p><a href="https://wa.me/${WA}?text=Olá%2C%20Pedro.%20Vi%20o%20cardápio%20de%20exemplo%20e%20quero%20um%20assim." target="_blank" rel="noreferrer">Fale com o Pedro</a></section><p class="note">Exemplo criado por <a href="../">Pedro Teles</a>. Nomes, itens e preços são fictícios.</p>`;
+el.innerHTML=html;
+function upd(){let n=0,t=0;for(const k in cart){const c=cart[k];n+=c.n;t+=c.n*c.price;document.getElementById("n-"+k).textContent=c.n;document.getElementById("q-"+k).classList.toggle("on",c.n>0);document.querySelector(`.add[data-k="${k}"]`).style.display=c.n?"none":""}document.getElementById("cart").classList.toggle("on",n>0);document.getElementById("cartCount").textContent=`Enviar pedido (${n})`;document.getElementById("cartTotal").textContent=brl(t)}
+document.addEventListener("click",e=>{const a=e.target.dataset.k,m=e.target.dataset.m;if(a){cart[a].n++;upd()}if(m){cart[m].n--;upd()}});
+document.getElementById("send").onclick=()=>{let t=0,l=["Olá! Quero fazer um pedido (cardápio de exemplo):",""];for(const k in cart){const c=cart[k];if(c.n){l.push(`${c.n}x ${c.name} - ${brl(c.n*c.price)}`);t+=c.n*c.price}}l.push("",`Total: ${brl(t)}`);window.open(`https://wa.me/${WA}?text=${encodeURIComponent(l.join("\n"))}`,"_blank")};
+</script>
+</body>
+</html>
