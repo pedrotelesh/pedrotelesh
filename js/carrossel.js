@@ -14,12 +14,7 @@
   let lastPageCount = -1;
 
   function getVisibleCount() {
-    const trackWidth = track.clientWidth;
-    const first = items[0];
-    if (!first || trackWidth === 0) return 3;
-    const itemWidth = first.getBoundingClientRect().width;
-    if (itemWidth <= 0) return 3;
-    return Math.max(1, Math.round(trackWidth / itemWidth));
+    return window.innerWidth <= 900 ? 2 : 3;
   }
 
   function getPageCount() {

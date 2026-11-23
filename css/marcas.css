@@ -136,8 +136,15 @@
 }
 
 @media (max-width: 900px) {
+    .marcas-lista {
+        gap: 16px;
+    }
     .marcas-item {
-        flex: 0 0 calc((100% - 20px) / 2);
+        flex: 0 0 calc((100% - 16px) / 2);
+        padding: 20px 16px;
+    }
+    .marcas-item img {
+        max-width: 110px;
     }
 }
 
@@ -148,10 +155,31 @@
 }
 
 @media (max-width: 600px) {
+    .marcas-lista {
+        gap: 12px;
+    }
     .marcas-item {
-        flex: 0 0 82%;
+        flex: 0 0 calc((100% - 12px) / 2);
+        padding: 16px 10px;
+    }
+    .marcas-item img {
+        max-width: 85px;
+        margin-bottom: 8px;
     }
     .marcas-item p {
-        font-size: 1rem;
+        font-size: 0.9375rem;
+    }
+    .carrossel-controles {
+        margin-top: 20px;
+    }
+    .carrossel-indicadores {
+        gap: 6px;
+    }
+    .carrossel-ponto {
+        width: 8px;
+        height: 8px;
+    }
+    .carrossel-ponto.ativo {
+        width: 20px;
     }
 }
