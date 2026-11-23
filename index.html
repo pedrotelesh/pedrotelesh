@@ -98,36 +98,61 @@
         <h2 class="subtitulo" data-i18n="brands.subtitle">Brands</h2>
         <div class="marcas-container">
             <p class="marcas-texto" data-i18n="brands.p">Companies from <strong>various industries</strong> trust my work; I always aim to deliver solutions of <strong>high quality and impact</strong>.</p>
-            <ul class="marcas-lista">
-                <li>
-                    <img src="img/brands/record.png" alt="Record">
-                    <p>Record</p>
-                </li>
-                <li>
-                    <img src="img/brands/blip.png" alt="Blip">
-                    <p>Blip</p>
-                </li>
-                <li>
-                    <img src="img/brands/semparar.png" alt="Sem Parar">
-                    <p>Sem Parar</p>
-                </li>
-                <li>
-                    <img src="img/brands/trato.png" alt="Trato">
-                    <p>Trato</p>
-                </li>
-                <li>
-                    <img src="img/brands/origoenergia.png" alt="Órigo Energia">
-                    <p>Órigo Energia</p>
-                </li>
-                <li>
-                    <img src="img/brands/golplus.png" alt="Gol Plus">
-                    <p>Gol Plus</p>
-                </li>
-                <li>
-                    <img src="img/brands/childfund.png" alt="ChildFund">
-                    <p>ChildFund</p>
-                </li>
-            </ul>
+            <div class="marcas-carrossel" role="region" aria-roledescription="carousel" aria-label="Marcas atendidas">
+                <div class="carrossel-viewport">
+                    <ul class="marcas-lista" id="marcas-track">
+                        <li class="marcas-item">
+                            <img src="img/brands/record.png" alt="Record" loading="lazy">
+                            <p>Record</p>
+                        </li>
+                        <li class="marcas-item">
+                            <img src="img/brands/semparar.png" alt="Sem Parar" loading="lazy">
+                            <p>Sem Parar</p>
+                        </li>
+                        <li class="marcas-item">
+                            <img src="img/brands/nadir.png" alt="Nadir" loading="lazy">
+                            <p>Nadir</p>
+                        </li>
+                        <li class="marcas-item">
+                            <img src="img/brands/globalfy.png" alt="Globalfy" loading="lazy">
+                            <p>Globalfy</p>
+                        </li>
+                        <li class="marcas-item">
+                            <img src="img/brands/karlaassed.png" alt="Grupo Karla Assed" loading="lazy">
+                            <p>Grupo Karla Assed</p>
+                        </li>
+                        <li class="marcas-item">
+                            <img src="img/brands/garnus.png" alt="Garnus" loading="lazy">
+                            <p>Garnus</p>
+                        </li>
+                        <li class="marcas-item">
+                            <img src="img/brands/pilbox.png" alt="Pilbox" loading="lazy">
+                            <p>Pilbox</p>
+                        </li>
+                        <li class="marcas-item">
+                            <img src="img/brands/golplus.png" alt="Gol Plus" loading="lazy">
+                            <p>Gol Plus</p>
+                        </li>
+                        <li class="marcas-item">
+                            <img src="img/brands/bwa.png" alt="BWA" loading="lazy">
+                            <p>BWA</p>
+                        </li>
+                        <li class="marcas-item">
+                            <img src="img/brands/trato.png" alt="Trato" loading="lazy">
+                            <p>Trato</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="carrossel-controles">
+                    <button class="carrossel-btn carrossel-prev" id="carrossel-prev" type="button" aria-label="Marca anterior" title="Anterior">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <div class="carrossel-indicadores" id="carrossel-indicadores" role="tablist" aria-label="Navegação do carrossel"></div>
+                    <button class="carrossel-btn carrossel-next" id="carrossel-next" type="button" aria-label="Próxima marca" title="Próxima">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
     <section class="projetos" id="projetos" aria-label="Formação">
@@ -209,6 +234,7 @@
         </div>
     </footer>
     <script src="js/lang.js"></script>
+    <script src="js/carrossel.js"></script>
     <script>
         document.getElementById('ano-atual').innerText = new Date().getFullYear();
     </script>
