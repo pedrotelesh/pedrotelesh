@@ -24,6 +24,7 @@ body {
     margin: 0px;
     font-family: "Fira Sans", Arial, sans-serif;
     color: #141414;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, strong, b,
@@ -87,7 +88,10 @@ a {
         max-width: initial !important;
     }
     .container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 40px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }

@@ -1,6 +1,20 @@
+.marcas {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    box-sizing: border-box;
+}
+
 .marcas .subtitulo {
     max-width: 5ch;
     color: #e0e0e0;
+}
+
+.marcas-container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .marcas-texto {
@@ -9,6 +23,8 @@
     margin-bottom: 40px;
     max-width: 60ch;
     color: #525252;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .marcas-texto strong {
@@ -18,14 +34,20 @@
 .marcas-carrossel {
     position: relative;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     margin-top: 20px;
+    box-sizing: border-box;
 }
 
 .carrossel-viewport {
     position: relative;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     overflow: hidden;
     padding: 10px 0;
+    box-sizing: border-box;
 }
 
 .marcas-lista {
@@ -34,6 +56,8 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     list-style: none;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -44,6 +68,7 @@
     cursor: grab;
     user-select: none;
     -webkit-user-select: none;
+    box-sizing: border-box;
 }
 
 .marcas-lista.is-dragging {
@@ -58,6 +83,8 @@
 
 .marcas-item {
     flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 0;
+    max-width: 100%;
     scroll-snap-align: start;
     background: #f5f5f5;
     padding: 24px 20px;
@@ -80,11 +107,11 @@
 
 .marcas-item img {
     margin-bottom: 12px;
-    border-radius: 12px;
-    max-width: 140px;
-    width: 100%;
+    border-radius: 8px;
+    max-width: 120px;
+    max-height: 80px;
+    width: auto;
     height: auto;
-    aspect-ratio: 1;
     object-fit: contain;
     margin-left: auto;
     margin-right: auto;
@@ -99,6 +126,8 @@
     color: #141414;
     margin: 0;
     word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .carrossel-controles {
@@ -141,33 +170,61 @@
     }
     .marcas-item {
         flex: 0 0 calc((100% - 16px) / 2);
-        padding: 20px 16px;
+        padding: 20px 14px;
+        min-width: 0;
     }
     .marcas-item img {
-        max-width: 110px;
+        max-width: 100px;
+        max-height: 65px;
+        margin-bottom: 10px;
+    }
+    .marcas-item p {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
+    .marcas.container {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 60px 20px;
+    }
     .marcas .subtitulo {
         color: #141414;
+    }
+    .marcas-texto {
+        font-size: 1.25rem;
+        margin-bottom: 28px;
+        max-width: 100%;
     }
 }
 
 @media (max-width: 600px) {
+    .marcas.container {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 40px 16px;
+    }
     .marcas-lista {
-        gap: 12px;
+        gap: 10px;
     }
     .marcas-item {
-        flex: 0 0 calc((100% - 12px) / 2);
-        padding: 16px 10px;
+        flex: 0 0 calc((100% - 10px) / 2);
+        padding: 14px 8px;
+        min-width: 0;
+        border-radius: 6px;
     }
     .marcas-item img {
-        max-width: 85px;
+        max-width: 76px;
+        max-height: 50px;
         margin-bottom: 8px;
     }
     .marcas-item p {
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
+        line-height: 1.2;
+    }
+    .marcas-texto {
+        font-size: 1.125rem;
+        margin-bottom: 24px;
+        line-height: 1.35;
     }
     .carrossel-controles {
         margin-top: 20px;
@@ -181,5 +238,33 @@
     }
     .carrossel-ponto.ativo {
         width: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .marcas.container {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 32px 12px;
+    }
+    .marcas-lista {
+        gap: 8px;
+    }
+    .marcas-item {
+        flex: 0 0 calc((100% - 8px) / 2);
+        padding: 10px 6px;
+        min-width: 0;
+    }
+    .marcas-item img {
+        max-width: 60px;
+        max-height: 40px;
+        margin-bottom: 6px;
+    }
+    .marcas-item p {
+        font-size: 0.75rem;
+        line-height: 1.15;
+    }
+    .marcas-texto {
+        font-size: 1rem;
+        margin-bottom: 20px;
     }
 }
