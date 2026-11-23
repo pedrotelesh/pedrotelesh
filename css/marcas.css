@@ -157,6 +157,15 @@
     border-radius: 5px;
 }
 
+@media (min-width: 769px) {
+    .marcas .subtitulo {
+        max-width: none;
+        white-space: nowrap;
+        word-break: normal;
+        font-size: min(5rem, calc((100vw - 140px) / 13.5));
+    }
+}
+
 @media (max-width: 900px) {
     .marcas {
         width: 100%;
