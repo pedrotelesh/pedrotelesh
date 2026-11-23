@@ -41,6 +41,15 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.marcas-lista.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
 }
 
 .marcas-lista::-webkit-scrollbar {
@@ -79,6 +88,9 @@
     object-fit: contain;
     margin-left: auto;
     margin-right: auto;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-drag: none;
 }
 
 .marcas-item p {
@@ -93,36 +105,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
     margin-top: 30px;
-}
-
-.carrossel-btn {
-    background: #141414;
-    color: #ffffff;
-    border: none;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
-}
-
-.carrossel-btn:hover {
-    background: #333333;
-    transform: scale(1.08);
-}
-
-.carrossel-btn:active {
-    transform: scale(0.95);
-}
-
-.carrossel-btn:focus-visible {
-    outline: 2px solid #141414;
-    outline-offset: 3px;
 }
 
 .carrossel-indicadores {
@@ -153,8 +136,15 @@
 }
 
 @media (max-width: 900px) {
+    .marcas-lista {
+        gap: 16px;
+    }
     .marcas-item {
-        flex: 0 0 calc((100% - 20px) / 2);
+        flex: 0 0 calc((100% - 16px) / 2);
+        padding: 20px 16px;
+    }
+    .marcas-item img {
+        max-width: 110px;
     }
 }
 
@@ -165,14 +155,31 @@
 }
 
 @media (max-width: 600px) {
+    .marcas-lista {
+        gap: 12px;
+    }
     .marcas-item {
-        flex: 0 0 82%;
+        flex: 0 0 calc((100% - 12px) / 2);
+        padding: 16px 10px;
+    }
+    .marcas-item img {
+        max-width: 85px;
+        margin-bottom: 8px;
     }
     .marcas-item p {
-        font-size: 1rem;
+        font-size: 0.9375rem;
     }
-    .carrossel-btn {
-        width: 38px;
-        height: 38px;
+    .carrossel-controles {
+        margin-top: 20px;
+    }
+    .carrossel-indicadores {
+        gap: 6px;
+    }
+    .carrossel-ponto {
+        width: 8px;
+        height: 8px;
+    }
+    .carrossel-ponto.ativo {
+        width: 20px;
     }
 }
